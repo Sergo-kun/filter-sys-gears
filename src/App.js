@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import InerBlock from './components/InnerBlock/InerBlock';
+import ResultBlock from './components/ResultBlock/ResultBlock';
 
 function App() {
+const [incomingValue, setIncomingValue] = useState("") /*данні що потрібно перебрати */
+  const [conditionValue, setConditionValue] = useState("") // критерії по яким данні будуть перебиратися
+
+  
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+
+     <InerBlock  setIncomingValue={setIncomingValue} setConditionValue={setConditionValue}/>{/*блок для вводу іеформації */}
+      <ResultBlock setIncomingValue={setIncomingValue} incomingValue={incomingValue} conditionValue={conditionValue}/>{/*блок для виводу інформації*/}
+
+
+     
     </div>
   );
 }
